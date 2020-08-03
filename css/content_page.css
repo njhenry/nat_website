@@ -1,0 +1,139 @@
+* {
+	margin: 0;
+}
+
+html, body {
+	height: 100%;
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+body {
+	background-position: center center;
+	background-color:#CCCCCC;
+}
+
+.all-but-footer {
+	height:100%;
+	padding: 0;
+	margin: 0 auto -50px;
+}
+
+#body-container {
+	position: relative;
+	height: auto;
+	max-width: 1000px;
+	padding: 10px;
+	margin: 0 auto;
+}
+
+.page-title {
+	position:relative;
+	margin: 10px 0 10px 0;
+	border: 10px solid #202020;
+	padding: 5px 10px 5px 10px;
+	
+	background-color:#800000;
+	font-family:Tahoma,Geneva,sans-serif;
+	color:white;
+	text-align:center;
+}
+
+.page-title h1 {
+	margin: 10px 0;
+}
+
+.page-content {
+	position:relative;
+	height:auto;
+	margin: 10px 0 10px 0;
+	border: 10px solid #202020;
+	padding: 0;
+	background-color:#800000;
+}
+
+.post {
+	position:relative;
+	margin: 15px 10px 15px 10px;
+	padding: 5px 5px 5px 5px;
+	height:auto;
+	background-color:white;
+	color:black;
+	overflow: hidden;
+}
+
+.post h1,h2,h3,h4,p {
+	margin: 10px 10px;
+}
+
+.post h1, h2, h3, h4 {
+	text-align:center;
+}
+
+.post h1, h2, h3 {
+	text-decoration:strong;
+}
+
+.post h4 {
+	font-style: italic;
+}
+.post_left {
+	min-height: 100px;
+	width: 70%;
+	float: left;
+	display:inline-block;
+}
+
+.post_right {
+	min-height: 100px;
+	width: 30%;
+	display:inline-block;
+}
+
+/* Styling for the footer */
+#push-down {
+	height: 50px;
+	margin: 0;
+}
+#footer {
+	height: 50px;
+	width: 100%;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	background: -webkit-linear-gradient(#000, #505050); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#000, #505050); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#000, #505050); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#000, #505050); /* Standard syntax */
+	display: table;
+}
+
+.center-footer {
+	margin: 0;
+	padding: 0;
+	display: table-cell;
+	vertical-align:middle;
+}
+
+#footer p {
+	color:white;	
+	text-align:center;
+	font-size:12px;
+	font-family:Tahoma,Geneva,sans-serif;
+	white-space: nowrap;
+	overflow: hidden;
+	line-height: 15px;
+}
+
+#footer a:link {
+	color:red;
+	text-decoration:none;
+}
+
+#footer a.highlight:hover {
+	background-color: white
+}
+
+#footer a:visited {
+	color:#853985;
+}
+
