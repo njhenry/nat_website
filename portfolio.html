@@ -1,0 +1,155 @@
+---
+layout: default
+title: Portfolio - Nat Henry
+---
+
+<script>window.initFuncs = [];</script>
+
+<div class="posts">
+  <div class="content full-bleed" id="recent-posts">
+    {% for ppost in site.portfolio %}
+      {% if ppost.bgimg and ppost.display %}
+
+        <!-- Post with a background image -->
+        <a href="{{ ppost.url }}" class="post-excerpt photo">
+          <div class="padded-content">
+            <div class="title">{{ ppost.title }}</div>
+            <div class="image" style="background-image:url('{{ ppost.bgimg }}')"></div>
+          </div>
+        </a>
+
+      {% elsif ppost.info and ppost.display %}
+
+        <!-- Any posts without a background image gets intro text -->
+        <a href="{{ ppost.url }}" class="post-excerpt">
+          <div class="padded-content">
+            <div class="title">{{ ppost.title }}</div>
+            <span class="body">
+              <p>{{ ppost.info }}</p>
+            </span>
+          </div>
+        </a>
+
+      {% endif %}
+    {% endfor %}
+  </div>    
+</div>
+
+<!-- Generate columns -->
+<script type="text/javascript">
+(function(){
+
+  var columns = null;
+
+  function f(){
+    var cols = window.innerWidth >= 890 ? 2 : 1;
+    if (columns === cols) { return; }
+    columns = cols;
+
+    var posts = document.getElementById('recent-posts');
+    var childNodes = posts.childNodes, i, L = childNodes.length, node, h,
+        col_width, col0_y, col1_y, col1_x,
+        origin = {x:0, y:0}, node_count = 0, is_col0, row0_max_y = 0;
+
+    posts.style.position = (columns === 1) ? null : 'relative';
+
+    for (i = 0; i !== L; ++i) {
+      node = childNodes[i];
+      if (node.nodeType === Node.ELEMENT_NODE) {
+        if (node.className === 'breaker') {
+          if (columns === 1) {
+            node.style.height = null;
+          } else {
+            node.style.height = Math.max(col0_y, col1_y) + 'px';
+          }
+          break;
+        }
+        if (columns === 1) {
+          node.style.position = null;
+          node.style.top = null;
+          node.style.left = null;
+          node.style.width = null;
+          continue;
+        }
+        node.style.position = 'absolute';
+        if (col0_y === undefined) {
+          origin.x = node.offsetLeft;
+          origin.y = node.offsetTop;
+          col_width = node.clientWidth;
+          col0_y = origin.y + node.clientHeight;
+          row0_max_y = col0_y;
+          node.style.top = '0px';
+          node.style.left = '0px';
+          node.style.width = col_width + 'px';
+          //node.style.border = '1px solid red'
+        } else {
+          if (col1_y === undefined) {
+            col1_y = origin.y + node.clientHeight;
+            col1_x = origin.x + node.clientWidth;
+            if (col1_y > row0_max_y) {
+              row0_max_y = col1_y;
+            }
+            node.style.top = '0px';
+            node.style.left = col1_x + 'px';
+            node.style.width = col_width + 'px';
+          } else {
+            // node.style.position = 'absolute';
+            is_col0 = (node_count % 2) === 0;
+            node.style.width = col_width + 'px';
+            if (is_col0) {
+              node.style.left = origin.x + 'px';
+              node.style.top = col0_y + 'px';
+              node.setAttribute('data-height', node.clientHeight);
+              col0_y += node.clientHeight;
+              node.classList.add('col0');
+            } else {
+              node.style.left = col1_x + 'px';
+              node.style.top = col1_y + 'px';
+              node.setAttribute('data-height', node.clientHeight);
+              col1_y += node.clientHeight;
+              node.classList.add('col1');
+            }
+          }
+        }
+        ++node_count;
+      }
+    }
+  }
+
+  function setup(){
+    f();
+    var onresize = f;
+    if (window.addEventListener) {
+      window.addEventListener('resize', onresize);
+    } else {
+      window.attachEvent('resize', onresize);
+    }
+  }
+
+  window.initFuncs.push(setup);
+
+})();
+</script>
+
+<!-- Highlight functions -->
+<script type="text/javascript">
+  var n,i,L,cn,v = document.getElementsByTagName('pre');
+  for (i=0,L=v.length;i<L;++i) {
+    n = v.item(i);
+    if ((cn = n.firstChild) && cn.nodeName == 'CODE') {
+      if (cn.className.indexOf("none") !== -1 || cn.className.indexOf("txt") !== -1) {
+        cn.className = 'nohighlight';
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" media="all" href="/assets/css/highlight.css" type="text/css">
+<script src="/assets/js/highlight.js"></script>
+
+<!-- Actually run setup -->
+<script type="text/javascript">
+  for (var k in window.initFuncs){
+    window.initFuncs[k]();
+  } 
+  delete window.initFuncs;
+</script>
