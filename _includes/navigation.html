@@ -1,0 +1,22 @@
+<header>
+
+  <!-- LHS of the header -->
+  <h1 class="logo" onclick="document.location.href='/';">
+    <a href="../"><span style="color:#888;">
+      Nat Henry 
+    </span></a>
+    |{% if page.collection == 'writing' %} Writing {% elsif page.collection == 'portfolio' %} Portfolio {% else %} {{ page.title }} {% endif %} 
+  </h1>
+
+  <!-- RHS of the header -->
+  <ul class="navigation">
+    {% for item in site.data.navigation %}
+      {% if page.url == item.link %}
+        <li>{{ item.name }}</li>
+      {% else %}
+        <li><a href="{{ item.link }}" title="{{ item.name }}">{{ item.name }}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+</header>
