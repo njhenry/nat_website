@@ -8,13 +8,13 @@ title: Portfolio
 <div class="posts">
   <div class="content full-bleed" id="recent-posts">
     {% for ppost in site.portfolio %}
-      {% if ppost.bgimg and ppost.display %}
+      {% if ppost.bg_img and ppost.display %}
 
         <!-- Post with a background image -->
         <a href="{{ ppost.url }}" class="post-excerpt photo">
           <div class="padded-content">
             <div class="title">{{ ppost.title }}</div>
-            <div class="image" style="background-image:url('{{ ppost.bgimg }}')"></div>
+            <div class="image" style="background-image:url('{{ ppost.bg_img }}')"></div>
           </div>
         </a>
 
