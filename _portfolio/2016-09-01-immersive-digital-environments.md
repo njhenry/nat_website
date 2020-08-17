@@ -1,5 +1,6 @@
 ---
 title: Immersive Digital Environments
+layout: default
 display: true
 info: >-
   Working with GIS researchers at The Ohio State University and UC Santa Barbara, 

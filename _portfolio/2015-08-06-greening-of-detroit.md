@@ -1,5 +1,6 @@
 ---
 title: Prioritizing Tree Planting in Detroit
+layout: default
 display: true
 info: false
 bgimg: /assets/media/portfolio_covers/greening_cover.png

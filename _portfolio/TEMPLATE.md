@@ -1,5 +1,6 @@
 ---
 title: Portfolio template
+layout: default
 display: false
 info: >-
   Add a short description of the project here

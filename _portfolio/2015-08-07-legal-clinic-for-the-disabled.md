@@ -1,5 +1,6 @@
 ---
 title: Poverty, Disability, and Legal Need in Philadelphia
+layout: default
 display: true
 info: >-
   Using a navigation system based on D3 charts, this web map introduces users to 
