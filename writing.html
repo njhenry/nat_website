@@ -4,63 +4,61 @@ title: Writing
 ---
 
 <div class='body-container'>
-  <div class='content'>
 
-    {% for wpost in site.writing reversed %}{% if wpost.display %}
-    <article>
+  {% for wpost in site.writing reversed %}{% if wpost.display %}
+  <article class='post'>
 
-      <!-- Title -->
-      <header>
-        <a title="{{ wpost.title }}" href="{% if wpost.external %}{{ wpost.forward_to }}{% else %}{{ wpost.url }}{% endif %}">
-          <h2>{{ wpost.title }}</h2>
-        </a>
-      </header>
-      <!-- Date -->
-      {% if wpost.date %}
-        <aside>
-          {{ wpost.date | date_to_string }}
-        </aside>
+    <!-- Title -->
+    <div>
+      <a title="{{ wpost.title }}" href="{% if wpost.external %}{{ wpost.forward_to }}{% else %}{{ wpost.url }}{% endif %}">
+        <h3>{{ wpost.title }}</h3>
+      </a>
+    </div>
+    <!-- Date -->
+    {% if wpost.date %}
+      <aside>
+        {{ wpost.date | date_to_string }}
+      </aside>
+    {% endif %}
+
+    <div class='post-content'><div class='post-row'>
+      <!-- Optional picture -->
+      {% if wpost.thumb_img %}
+        <div class='post-left'>
+          <a title="{{ wpost.title }}" href="{% if wpost.external %}{{ wpost.forward_to }}{% else %}{{ wpost.url }}{% endif %}">
+            <img 
+              class="post-thumb" 
+              src="{{ wpost.thumb_img }}"
+              alt="{% if wpost.thumb_alt %}{{ wpost.thumb_alt }}{% else %}{{ wpost.title }}{% endif %}"
+              />
+          </a>
+        </div>
       {% endif %}
-
-      <div>
-        <!-- Optional picture -->
-        {% if wpost.thumb_img %}
-          <div>
-            <a title="{{ wpost.title }}" href="{% if wpost.external %}{{ wpost.forward_to }}{% else %}{{ wpost.url }}{% endif %}">
-              <img 
-                class="post-thumb" 
-                src="{{ wpost.thumb_img }}"
-                alt="{% if wpost.thumb_alt %}{{ wpost.thumb_alt }}{% else %}{{ wpost.title }}{% endif %}"
-                />
-            </a>
-          </div>
-        {% endif %}
-        <!-- Description and word count -->
-        <p>
+      <!-- Description and word count -->
+      <div {% if wpost.thumb_img %}class="post-right"{% endif %}>
           {{ wpost.info }}
           {% unless wpost.external %}
             <span class='word-count'>({{ wpost.content | number_of_words }} words)</span>
           {% endunless %}
-        </p>
       </div>
+    </div></div>
 
-      <!-- TODO: Add sharing links -->      
-      <!--
-      <footer>
-        <table class="share-buttons">
-          <tbody>
-            <tr class="buttons">
-              <td class="email"><span class="service"><a class="email-this share-link" data-id="XX" data-title="Lorem Ipsum" href="#"><i class="icon icon-mail"></i>Email</a></span></td>
-              <td class="twitter"><span class="service"><a class="tweet-this share-link" href="https://twitter.com/intent/tweet?text=Lorem+Ipsum;url=https://google.com/"><i class="icon icon-twitter"></i>Tweet</a></span></td>
-            </tr>
-          </tbody>
-        </table>
-      </footer>
-      -->
+    <!-- TODO: Add sharing links -->      
+    <!--
+    <footer>
+      <table class="share-buttons">
+        <tbody>
+          <tr class="buttons">
+            <td class="email"><span class="service"><a class="email-this share-link" data-id="XX" data-title="Lorem Ipsum" href="#"><i class="icon icon-mail"></i>Email</a></span></td>
+            <td class="twitter"><span class="service"><a class="tweet-this share-link" href="https://twitter.com/intent/tweet?text=Lorem+Ipsum;url=https://google.com/"><i class="icon icon-twitter"></i>Tweet</a></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </footer>
+    -->
 
-    </article>
-    {% endif %}{% endfor %}
+  </article>
+  {% endif %}{% endfor %}
 
-  </div>  
 </div>
 
