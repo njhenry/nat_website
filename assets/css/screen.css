@@ -1,20 +1,6 @@
 @viewport {
   width: device-width;
 }
-/*@font-face {
-  font-family: 'M+ 1mn';
-  font-style: normal;
-  font-weight: 300;
-  src: local('mplus-1mn-light'), local('M+ 1mn light'), url('/res/mplus-1mn-light.ttf')
-       format('truetype');
-}
-@font-face {
-  font-family: 'M+ 1mn';
-  font-style: normal;
-  font-weight: 600;
-  src: local('mplus-1mn-regular'), local('M+ 1mn regular'), url('/res/mplus-1mn-regular.ttf')
-       format('truetype');
-}*/
 
 /* Base */
 * { margin:0; padding:0; font-family:inherit; }
@@ -666,34 +652,3 @@ footer {
       min-height:300px;
     }
 }
-
-/* medium-res devices (e.g. ipad, but not iphone) */
-/*#sidebar { display:none; }
-@media only screen and (min-device-width: 480px) and (max-device-width: 1024px) {
-  body { width:100%; font-family: 'Poly', georgia; }
-}*/
-
-/* devices like laptops and regular computers (including ipad but not
-   iphone) Note that iOS with retina display device calculates with a 1/2
-   resolution due to the concept of "scale", thus an iPhone 4 triggers for
-   480x240px rather than the actual 960x480 pixels. This is a good thing.
-*/
-/*@media only screen and (min-device-width: 480px) {*/
-/*}*/
-
-/* medium-res devices, landscape orientation (e.g. ipad but not iphone) */
-/*@media only screen and (min-device-width: 480px) and (max-device-width: 1024px)
-                     and (orientation:landscape) {
-  header { display:none; }
-  html.ipad #sidebar {
-    display:block;
-    width:240px;
-    height:100%;
-    border:none;
-    background-color:black;
-    position:absolute;
-    right:0;
-    top:0;
-  }
-  html.ipad { zoom:70%; }
-}*/
