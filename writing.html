@@ -2,3 +2,65 @@
 layout: default
 title: Writing
 ---
+
+<div class='posts'>
+  <div class='content full-bleed'>
+
+    {% for wpost in site.writing reversed %}{% if wpost.display %}
+    <article>
+
+      <!-- Title -->
+      <header>
+        <a title="{{ wpost.title }}" href="{% if wpost.external %}{{ wpost.forward_to }}{% else %}{{ wpost.url }}{% endif %}">
+          <h2>{{ wpost.title }}</h2>
+        </a>
+      </header>
+      <!-- Date -->
+      {% if wpost.date %}
+        <aside>
+          {{ wpost.date | date_to_string }}
+        </aside>
+      {% endif %}
+
+      <div>
+        <!-- Optional picture -->
+        {% if wpost.thumb_img %}
+          <div>
+            <a title="{{ wpost.title }}" href="{% if wpost.external %}{{ wpost.forward_to }}{% else %}{{ wpost.url }}{% endif %}">
+              <img 
+                class="post-thumb" 
+                src="{{ wpost.thumb_img }}"
+                alt="{% if wpost.thumb_alt %}{{ wpost.thumb_alt }}{% else %}{{ wpost.title }}{% endif %}"
+                />
+            </a>
+          </div>
+        {% endif %}
+        <!-- Description and word count -->
+        <p>
+          {{ wpost.info }}
+          {% unless wpost.external %}
+            <span class='word-count'>({{ wpost.content | number_of_words }} words)</span>
+          {% endunless %}
+        </p>
+      </div>
+
+      <!-- TODO: Add sharing links -->      
+      <!--
+      <footer>
+        <table class="share-buttons">
+          <tbody>
+            <tr class="buttons">
+              <td class="email"><span class="service"><a class="email-this share-link" data-id="XX" data-title="Lorem Ipsum" href="#"><i class="icon icon-mail"></i>Email</a></span></td>
+              <td class="twitter"><span class="service"><a class="tweet-this share-link" href="https://twitter.com/intent/tweet?text=Lorem+Ipsum;url=https://google.com/"><i class="icon icon-twitter"></i>Tweet</a></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </footer>
+      -->
+
+    </article>
+    {% endif %}{% endfor %}
+
+  </div>  
+</div>
+
