@@ -7,7 +7,7 @@ title: Portfolio
 
 <div class="posts">
   <div class="content full-bleed" id="recent-posts">
-    {% for ppost in site.portfolio %}
+    {% for ppost in site.portfolio reversed %}
       {% if ppost.bg_img and ppost.display %}
 
         <!-- Post with a background image -->
