@@ -23,6 +23,11 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@{{ site.twitter_username}}">
 
+    <!-- Optional redirect -->
+    {% if page.external %}
+      <meta http-equiv="refresh" content="0;url={{ page.forward_to }}" />
+    {% endif %}
+
   </head>
 
   <body>
