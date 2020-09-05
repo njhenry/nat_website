@@ -50,5 +50,4 @@ After loading all four of the inputs into QGIS, the user can simply run a tool t
 
 Using this model, the Greening of Detroit will be able to compare whatever areas they like, add street trees or change the road network over time, and experiment with different indicators of need. This makes the interactive model far more flexible than any static map, well-suited for a growing organization and a city in transition.
 
-***
 

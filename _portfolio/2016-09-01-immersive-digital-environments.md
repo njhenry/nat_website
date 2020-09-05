@@ -46,5 +46,4 @@ Once the game is open, you will be able to explore the Campus Point cliffs at th
  - Press `Alt + F4` to close the window
  - For users with a VR headset, simply plug the headset into your computer on Extended Desktop mode to view the landscape in VR.
 
-***
 
