@@ -8,8 +8,8 @@ info: >-
   We map the effort to eliminate child mortality at the district level across 
   99 low- and middle-income countries, tracking 123 million child deaths between
   2000 and 2017. While substantial progress has been made across nearly all
-  countries, we found that **58% of deaths between 2000 and 2017 could have been
-  averted** in the absence of within-country inequality.
+  countries, we found that 58% of deaths during this time could have been
+  averted in the absence of within-country inequality.
 
 external: true
 forward_to: https://www.nature.com/articles/s41586-019-1545-0
