@@ -7,7 +7,7 @@ title: >-
 date: 2020-08-17
 info: >-
   To celebrate switching my site over to Jekyll, I'm thinking about the four
-  setups I've used for web projects in the past.
+  setups I've used to power web projects in the past.
 
 external: false
 forward_to: https://google.com/
