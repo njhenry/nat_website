@@ -1,6 +1,6 @@
 ---
 layout: default
-display: true
+display: false
 
 title: >-
   Comparing web frameworks: base HTML, Flask, Jekyll, Wordpress

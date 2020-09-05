@@ -1,6 +1,6 @@
 ---
 layout: default
-display: true
+display: false
 
 title: >-
   Epidemiology's own crisis of reproducibility
