@@ -111,8 +111,8 @@ plot(fig)
 
 # Format data for output
 cities_output <- list(
-  nodes = city_dt[1:5, c('idx','name','long','lat','state','weight_viz'), with=F],
-  links = links_sub[1:5, c('to','from','force'), with=F]
+  nodes = city_dt[, c('idx','name','long','lat','state','weight_viz'), with=F],
+  links = links_sub[, c('to','from','force'), with=F]
 )
 
 # Save out
