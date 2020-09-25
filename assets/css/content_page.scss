@@ -99,3 +99,16 @@ article.post {
 .word-count {
 	color: #888888;
 }
+
+#flex-wrapper {
+	display: flex;
+	height: 100%;
+}
+
+#flex-left {
+	flex: 0 0 50%;
+}
+
+#flex-right {
+	flex: 1;
+}
