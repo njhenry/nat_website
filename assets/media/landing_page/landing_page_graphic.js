@@ -12,49 +12,88 @@ var div_height = $('#flex-left').height();
 var div_width = $('#flex-left').width();
 
 var svg = d3.select("#flex-left")
-    .append("svg")
-    .attr("viewBox", [0, 0, div_width, div_height])
-    .append("g");
+  .append("svg")
+    .attr("viewBox", [0, 0, div_width, div_height * .95]);
 
 var x = d3.scaleLinear()
-    .domain([ -5E5, 1.15E6 ])
-    .range([0, div_width]);
+  .domain([ -5E5, 1.15E6 ])
+  .range([0, div_width * .95]);
 var y = d3.scaleLinear()
-    .domain([ 3.3E6, 5.6E6 ])
-    .range([div_height, 0]);
+  .domain([ 3.3E6, 5.6E6 ])
+  .range([div_height, 0]);
 
 var projection = d3.geoEquirectangular();
 var geoGenerator = d3.geoPath(projection);
 
-// svg.append("g")
-//     .selectAll("line")
-//     .data(rails.features)
-//     .enter()
-//     .append('line')
-//         .attr('d', geoGenerator)
-//         .size('size', 0.05);
+for(f_i = 0, len_f = rails.features.length; f_i < len_f; f_i++ ){
+  var line_groups = rails.features[f_i].geometry.coordinates;
+  for(lg_i = 0, len_lg = line_groups.length; lg_i < len_lg; lg_i++ ){
+    var coords_arr = line_groups[lg_i]
+    var coords_str = "";
+    for(co_i = 0, len_co = coords_arr.length; co_i < len_co; co_i++ ){
+      coords_str += " " + x(coords_arr[co_i][0]) + ',' + y(coords_arr[co_i][1]);
+    }
+    svg.append('polyline')
+      .attr('points', coords_str)
+      .attr('stroke', 'black')
+      .attr('stroke-width', 0.3)
+      .attr('fill', 'none');
+  }
+}
+  
+
+var city_dots = svg
+  .append("g")
+  .selectAll("dot")
+  .data(cities.nodes)
+  .enter()
+  .append('circle')
+    .attr("cx", function(d) { return x(d.long); } )
+    .attr("cy", function(d) { return y(d.lat); } )
+    .attr("r", 0.0 )
+    .attr("fill-opacity", 0.5 )
+    .attr("stroke-opacity", 1.0 )
+    .style("fill", function(d) {
+      return d3.interpolateYlGnBu( Math.min( .2 + (Math.cbrt(d.weight_viz) - 250)/1500, 1 ) ) 
+    })
+    .transition()
+      .ease(d3.easeLinear)
+      .delay( function(d, i) {return i * 10 } )
+      .duration( function(d, i) { return 1000 + Math.random() * 2000 } )
+      .attr('r', function(d) { return Math.sqrt(d.weight_viz / 6E6) });
 
 
-svg.append("g")
-    .selectAll("line")
-    .data(cities.links)
-    .enter()
-    .append("line")
-        .attr("x1", function(d) { return x(cities.nodes[d.from - 1].long) })
-        .attr("x2", function(d) { return x(cities.nodes[d.to - 1].long) })
-        .attr("y1", function(d) { return y(cities.nodes[d.from - 1].lat) })
-        .attr("y2", function(d) { return y(cities.nodes[d.to - 1].lat) })
-        .attr('stroke', '#0066CC')
-        .attr('stroke-opacity', 0.25)
-        .attr('stroke-width', function(d) {return (d.weight_viz + 50) / 100});
+// Connect the cities, roughly in order of "force"
+var links_shuffled = link_shuffle(cities.links);
+var ani_delays = [ 8500 ];
 
-svg.append("g")
-    .selectAll("dot")
-    .data(cities.nodes)
-    .enter()
-    .append('circle')
-        .attr("cx", function(d) { return x(d.long); } )
-        .attr("cy", function(d) { return y(d.lat); } )
-        .attr("r", function(d) { return Math.sqrt(d.weight_viz / 1E7) })
-        .attr("fill-opacity", 0.75)
-        .style("fill", "#00CC66");
+
+for(ln_i = 0, len = links_shuffled.length; ln_i < len; ln_i++ ){
+  // Define the link
+  var this_link = links_shuffled[ln_i];
+  // Get the duration of this animation and add it to the delay of the next one
+  var this_duration = 1000 + Math.random() * 2000;
+  ani_delays.push( ani_delays[ln_i] + this_duration * .4 );
+  // Append to the SVG
+  var link_graphic = svg
+    .append('line')
+    .attr('x1', x( cities.nodes[this_link.from - 1].long ) )
+    .attr('y1', y( cities.nodes[this_link.from - 1].lat ) )
+    .attr('x2', x( cities.nodes[this_link.from - 1].long ) )
+    .attr('y2', y( cities.nodes[this_link.from - 1].lat ) )
+    .attr('stroke', '#ff8000' ) 
+    .attr('stroke-width', 1.5 + (this_link.force + 42)/20 )
+    .attr('stroke-opacity', Math.min(.2 + (this_link.force + 42)/40, .4))
+    .transition()
+      .ease(d3.easeCubicInOut)
+      .delay( function(d, i) { return ani_delays[ln_i] } )
+      .duration( this_duration )
+      .attr('x2', x( cities.nodes[this_link.to - 1].long ) )
+      .attr('y2', y( cities.nodes[this_link.to - 1].lat ) );
+}
+
+
+// Shuffle the items in an array
+function link_shuffle(link_array) {
+  return link_array.sort(() => Math.random() - 0.5 );
+}

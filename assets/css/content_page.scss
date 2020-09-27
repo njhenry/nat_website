@@ -106,11 +106,19 @@ article.post {
 }
 
 #flex-left {
-	flex: 0 0 50%;
+	flex: 0 0 60%;
 }
 
 #flex-right {
 	flex: 1;
+}
+
+.toc-title {
+	height: 20%
+}
+
+.toc-obj {
+	height: 10%
 }
 
 .fill-all {
