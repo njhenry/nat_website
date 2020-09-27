@@ -42,7 +42,8 @@ h1,h2,h3,h4,h5,h6 {
   text-rendering: optimizeLegibility;
   text-rendering: geometricPrecision;
 }
-h1,h2 { font-size: 180%; }
+h1 { font-size: 200%; }
+h2 { font-size: 180%; }
 h3 { font-size: 130%; }
 h4, h5, h6 { 
   font-size: 120%; 
