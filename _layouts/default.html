@@ -34,7 +34,13 @@
 	{% if page.url != "/" %}
 		{% include navigation.html %}
 	{% endif %}
-    {{ content }}
+
+  {{ content }}
+
+  {% if page.include_scripts %}{% for include_script in page.include_scripts %}
+    <script type='text/javascript' src='{{ include_script }}'></script>
+  {% endfor %}{% endif %}
+
   </body>
 </html>
 

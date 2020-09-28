@@ -17,6 +17,9 @@ thumb_alt: "TB mortality in Brazilian municipalities, 2015"
 splash_img: false
 splash_caption: >-
   Lorem ipsum
+
+include_scripts: []
+
 ---
 
 See this article on the [journal website](https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-018-1131-6).

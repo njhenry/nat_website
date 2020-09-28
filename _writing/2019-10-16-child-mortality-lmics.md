@@ -19,6 +19,9 @@ thumb_alt: "Number of under-5 deaths by district in 2017"
 splash_img: false
 splash_caption: >-
   Lorem ipsum
+
+include_scripts: []
+
 ---
 
 See this article on the [journal website](https://www.nature.com/articles/s41586-019-1545-0).

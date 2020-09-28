@@ -11,6 +11,9 @@ bg_img: false
 splash_img: false
 splash_caption: >-
   Lorem ipsum
+
+include_scripts: []
+
 ---
 
 # Creating immersive digital landscapes using computer vision

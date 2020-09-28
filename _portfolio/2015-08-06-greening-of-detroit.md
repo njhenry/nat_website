@@ -7,6 +7,9 @@ bg_img: /assets/media/portfolio_covers/greening_cover.png
 splash_img: false
 splash_caption: >-
   Lorem ipsum
+
+include_scripts: []
+
 ---
 
 # Creating a Tree Planting Prioritization Model in QGIS

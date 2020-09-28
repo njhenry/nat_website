@@ -10,6 +10,9 @@ bg_img: false
 splash_img: false
 splash_caption: >-
   Lorem ipsum
+
+include_scripts: []
+
 ---
 
 # Visualizing Poverty, Disability, and Legal Need in Philadelphia
