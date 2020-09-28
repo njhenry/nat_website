@@ -52,12 +52,12 @@ var city_dots = svg
     .attr("fill-opacity", 0.5 )
     .attr("stroke-opacity", 1.0 )
     .style("fill", function(d) {
-      return d3.interpolateYlGnBu( Math.min( .2 + (Math.cbrt(d.weight_viz) - 250)/1500, 1 ) ) 
+      return d3.interpolateYlGnBu( Math.min( .2 + (Math.cbrt(d.weight_viz) - 250)/1600, 1 ) ) 
     })
     .transition()
       .ease(d3.easeLinear)
-      .delay( function(d, i) {return i * 5 } )
-      .duration( function(d, i) { return 500 + Math.random() * 1500 } )
+      .delay( function(d, i) {return i * 8 } )
+      .duration( function(d, i) { return 750 + Math.random() * 2000 } )
       .attr('r', function(d) { return Math.sqrt(d.weight_viz / 6E6) });
 
 
