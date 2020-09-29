@@ -56,8 +56,8 @@ var city_dots = svg
     })
     .transition()
       .ease(d3.easeLinear)
-      .delay( function(d, i) {return i * 8 } )
-      .duration( function(d, i) { return 750 + Math.random() * 2000 } )
+      .delay( function(d, i) {return i * 5 } )
+      .duration( function(d, i) { return 500 + Math.random() * 1500 } )
       .attr('r', function(d) { return Math.sqrt(d.weight_viz / 6E6) });
 
 
