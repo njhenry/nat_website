@@ -23,7 +23,7 @@ title: Portfolio
         <!-- Any posts without a background image gets intro text -->
         <a href="{{ ppost.url }}" class="post-excerpt">
           <div class="padded-content">
-            <div class="title"><h3>{{ ppost.title }}</h3></div>
+            <div class="title">{{ ppost.title }}</div>
             <span class="body">
               <p>{{ ppost.info }}</p>
             </span>
@@ -152,4 +152,7 @@ title: Portfolio
     window.initFuncs[k]();
   } 
   delete window.initFuncs;
+
+  document.getElementById('default-content').style.padding = '0 60px';
+  document.getElementById('default-content').style.margin = '0 0';
 </script>
