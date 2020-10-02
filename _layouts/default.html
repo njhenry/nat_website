@@ -23,6 +23,12 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@{{ site.twitter_username}}">
 
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
     <!-- Optional redirect -->
     {% if page.external %}
       <meta http-equiv="refresh" content="0;url={{ page.forward_to }}" />
@@ -35,8 +41,10 @@
 		{% include navigation.html %}
 	{% endif %}
 
-  {{ content }}
-
+  <div class='content' id='default-content'>
+    {{ content }}
+  </div>
+  
   {% if page.include_scripts %}{% for include_script in page.include_scripts %}
     <script type='text/javascript' src='{{ include_script }}'></script>
   {% endfor %}{% endif %}
