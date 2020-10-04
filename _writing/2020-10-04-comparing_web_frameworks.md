@@ -2,11 +2,11 @@
 layout: default
 display: true
 
-title: Guide | HTML, Wordpress, Flask, Jekyll
+title: HTML, Wordpress, Flask, Jekyll
 date: 2020-10-04
 info: >-
-  For the first post of this blog, I compare my experiences using four different 
-  web frameworks to create a personal website.
+  For my first blog post, I compare my experiences using four different web 
+  frameworks to create a personal website.
 
 thumb_img: false
 thumb_alt: false
@@ -14,8 +14,7 @@ splash_img: false
 splash_caption: >-
   Lorem ipsum
 
-include_scripts: [
-]
+include_scripts: []
 
 ---
 
