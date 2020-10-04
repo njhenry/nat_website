@@ -17,7 +17,7 @@ splash_caption: >-
 include_scripts: [
   "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js",
   "https://d3js.org/d3.v5.min.js",
-  "/assets/js/writing/scripts_jekyll/simple_d3_viz.js"
+  "/assets/js/writing/web_frameworks/simple_d3_viz.js"
 ]
 
 ---
@@ -46,12 +46,12 @@ logic on the page or elsewhere. In the header of each post, I add an
 Here are some relevant attributes in this post's front matter:
 
 ```
-title: Adding custom Javascript to Jekyll posts
+title: Guide | Adding custom Javascript to Jekyll posts
 date: 2020-10-04
 include_scripts: [
   "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js",
   "https://d3js.org/d3.v5.min.js",
-  "/assets/js/writing/scripts_jekyll/simple_d3_viz.js"
+  "/assets/js/writing/web_frameworks/simple_d3_viz.js"
 ]
 ```
 
