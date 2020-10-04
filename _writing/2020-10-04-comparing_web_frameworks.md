@@ -390,4 +390,6 @@ Wordpress, Jekyll, and Flask all have competitors trying to fill the same niche.
 I hope this guide can serve as a starting point for exploring which options fit
 your site's needs.
 
+<hr />
+
 *Like this tutorial or have suggestions? [Let me know](/contact.html)!*
