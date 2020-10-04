@@ -106,7 +106,7 @@ Mike Bostock.
 >
 </div>
 
-I hope this tutorial is a useful guide to adding custom Javascript to your 
-Jekyll pages. Go forth and visualize!
+I hope this tutorial allows you to add custom Javascript to your own Jekyll 
+pages. Go forth and visualize!
 
 *Like this tutorial or have suggestions? [Let me know](/contact.html)!*
