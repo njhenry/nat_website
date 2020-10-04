@@ -36,7 +36,7 @@ This setup is inspired by a similar
 written by Emma Tosch. While our solutions are similar, my solution is more 
 concise and allows me to source any number of scripts hosted anywhere on the web.
 
-## Change 1: Front Matter
+### Change 1: Front Matter
 
 A feature of Jekyll is that each page can include [front 
 matter](https://jekyllrb.com/docs/front-matter/), which contains a list of 
@@ -58,7 +58,7 @@ include_scripts: [
 For this page, I created a visualization, `simple_d3_viz.js`, that relies on 
 the external jQuery and D3 libraries.
 
-## Change 2: Layout
+### Change 2: Layout
 
 I then include the following section at the bottom of the `<body>` section in my
 default page template, located in `_layouts/default.html`:
@@ -77,7 +77,7 @@ then the if-statement returns false and no scripts are sourced. You can see the
 full template for my posts [on 
 GitHub](https://github.com/njhenry/nat_website/blob/public/_layouts/default.html).
 
-## Change 3: Add a div
+### Change 3: Add a div
 
 Most Javascript visualizations target an existing div on a web page, so for the 
 final step, use the `<div>` HTML tag to create a div with a unique ID. HTML tags
@@ -92,13 +92,13 @@ define below on this page:
 </div>
 ```
 
-The script `simple_d3_viz.js` then targets the `add-viz` ID.
+The script `simple_d3_viz.js` then targets this div using the `add-viz` ID.
 
 Using these three components, I created a simple visualization on this page: a
 force-directed network of urban areas in the Western US, which also show up on 
 my [landing page](/index.html). This visualization was inspired by the [graph of
-_Les Misérables_](https://observablehq.com/@d3/force-directed-graph) created by 
-Mike Bostock.
+_Les Misérables_ characters](https://observablehq.com/@d3/force-directed-graph) 
+created by Mike Bostock.
 
 <div 
   id='add-viz'
@@ -106,7 +106,9 @@ Mike Bostock.
 >
 </div>
 
-I hope this tutorial allows you to add custom Javascript to your own Jekyll 
-pages. Go forth and visualize!
+I hope this tutorial gives you the tools to add custom Javascript to your own 
+Jekyll pages. Go forth and visualize!
+
+<hr />
 
 *Like this tutorial or have suggestions? [Let me know](/contact.html)!*
