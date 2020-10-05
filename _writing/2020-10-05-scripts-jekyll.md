@@ -3,7 +3,7 @@ layout: default
 display: true
 
 title: Adding custom Javascript to Jekyll posts
-date: 2020-10-04
+date: 2020-10-05
 info: >-
   How to add interactive visualizations written in Javascript to Jekyll blog 
   posts
@@ -47,7 +47,7 @@ Here are some relevant attributes in this post's front matter:
 
 ```
 title: Adding custom Javascript to Jekyll posts
-date: 2020-10-04
+date: 2020-10-05
 include_scripts: [
   "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js",
   "https://d3js.org/d3.v5.min.js",
