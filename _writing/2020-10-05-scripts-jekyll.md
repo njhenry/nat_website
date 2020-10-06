@@ -15,8 +15,7 @@ splash_caption: >-
   Lorem ipsum
 
 include_scripts: [
-  "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js",
-  "https://d3js.org/d3.v5.min.js",
+  "https://d3js.org/d3.v6.min.js",
   "/assets/js/writing/scripts_jekyll/simple_d3_viz.js"
 ]
 
