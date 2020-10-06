@@ -8,6 +8,11 @@
   <head>
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
+
+    {% if page.info %}
+      <meta name='description' content='{{ page.info }}'>
+    {% endif %}
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Get fonts -->
