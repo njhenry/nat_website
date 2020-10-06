@@ -5,14 +5,13 @@ display: true
 title: Adding custom Javascript to Jekyll posts
 date: 2020-10-05
 info: >-
-  How to add interactive visualizations written in Javascript to Jekyll blog 
-  posts
+  This tutorial describes how to add interactive data visualizations to Jekyll
+  blog posts, when Jekyll strips Javascript by default.
 
-thumb_img: false
-thumb_alt: false
-splash_img: false
-splash_caption: >-
-  Lorem ipsum
+thumb_img: /assets/media/writing_thumbs/2020-10-05-scripts-jekyll.png
+thumb_alt: Subset of a network of western US cities
+splash_img: /assets/media/writing/scripts_jekyll/post_header.png
+splash_caption: ""
 
 include_scripts: [
   "https://d3js.org/d3.v6.min.js",
