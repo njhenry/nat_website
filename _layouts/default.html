@@ -46,13 +46,23 @@
 		{% include navigation.html %}
 	{% endif %}
 
-  <div class='content' id='default-content'>
+  {% if page.splash_img %}
+    <img src='{{page.splash_img}}' class='splash-img' />
+  {% endif %}
+
+  <div 
+    class='content' 
+    id='default-content' 
+    {% if page.splash_img %}style='padding-top:10px;'{% endif %}
+  >
     {{ content }}
   </div>
   
-  {% if page.include_scripts %}{% for include_script in page.include_scripts %}
-    <script type='text/javascript' src='{{ include_script }}'></script>
-  {% endfor %}{% endif %}
+  {% if page.include_scripts %}
+    {% for include_script in page.include_scripts %}
+      <script type='text/javascript' src='{{ include_script }}'></script>
+    {% endfor %}
+  {% endif %}
 
   </body>
 </html>
