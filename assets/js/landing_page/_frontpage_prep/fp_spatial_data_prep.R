@@ -96,7 +96,7 @@ links[ force > top_half_pct, force := top_half_pct ]
 links[, rank_a := frank(force), by = idx_a ]
 links[, rank_b := frank(force), by = idx_b ]
 links[, rank_all := frank(force) ]
-links_sub <- links[ rank_a == 1 | rank_b == 1 | rank_all < 200, ]
+links_sub <- links[ rank_a == 1 | rank_b == 1 | rank_all < 150, ]
 links_sub[, `:=` (from = idx_a, to = idx_b) ]
 
 
