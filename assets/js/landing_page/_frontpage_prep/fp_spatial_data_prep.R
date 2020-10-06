@@ -10,6 +10,7 @@
 
 rm(list=ls())
 library(data.table)
+library(dplyr)
 library(geojsonsf)
 library(ggplot2)
 library(glue)
@@ -45,12 +46,14 @@ names(shps) <- names(shp_fps)
 cities <- shps$cities[shps$cities$ALAND10 > min_area_sqm, ]
 rails <- shps$lines
 
-# Simplify rails object
-rails_simple <- sf::st_simplify(rails, dTolerance = 2E3)
-rails_simple <- rails_simple %>% 
-  group_by(FULLNAME) %>% 
-  summarize(dummy=first(FULLNAME)) %>% 
+## Simplify rails object and drop small geometries
+rails_agg <- rails %>% 
+  dplyr::group_by(FULLNAME) %>% 
+  dplyr::summarize(name=first(FULLNAME)) %>% 
   st_cast
+rails_sub <- rails_agg[sf::st_length(rails_agg) > units::set_units(5E4, 'm'), ]
+rails_simple <- sf::st_simplify(rails_sub, dTolerance = 2E4)
+
 
 ## Keep only centroids of urban areas
 city_dt <- na.omit(data.table(
@@ -81,7 +84,7 @@ links <- links[
   ][, c('r_dist_a','r_dist_b') := NULL ]
 links[, same_state := as.numeric(state_a==state_b) ]
 links[, force := log(weight_a * weight_b/dist**2)]
-links[, force := force + min(force) ]
+links[, force := force - min(force) + 1 ]
 links[
   ( weight_rank_a > 20 | weight_rank_b > 20 ) & same_state == 0,
   force := force * 2 / 3
@@ -94,6 +97,7 @@ links[, rank_a := frank(force), by = idx_a ]
 links[, rank_b := frank(force), by = idx_b ]
 links[, rank_all := frank(force) ]
 links_sub <- links[ rank_a == 1 | rank_b == 1 | rank_all < 200, ]
+links_sub[, `:=` (from = idx_a, to = idx_b) ]
 
 
 ## Visualize
@@ -114,13 +118,15 @@ cities_output <- list(
   nodes = city_dt[, c('idx','name','long','lat','state','weight_viz'), with=F],
   links = links_sub[, c('to','from','force'), with=F]
 )
+names(cities_output$links) <- c('source', 'target', 'value')
+cities_output$nodes[, id := idx ]
 
 # Save out
-out_dir <- file.path(repo_dir, 'assets/media/landing_page')
+out_dir <- file.path(repo_dir, 'assets/js/landing_page')
 if(!dir.exists(out_dir)) stop("Issue - out directory does not exist.")
 
 cities_json <- jsonlite::toJSON(x=cities_output)
-write(cities_json, file=file.path(out_dir, 'wc_cities.json'))
+write(cities_json, file=file.path(out_dir, 'western_us_cities.json'))
 
 rails_json <- geojsonsf::sf_geojson(rails_simple)
-write(rails_json, file=file.path(out_dir, 'wc_rails.json'))
+write(rails_json, file=file.path(out_dir, 'western_us_rails.json'))
