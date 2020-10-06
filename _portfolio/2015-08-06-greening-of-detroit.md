@@ -4,9 +4,8 @@ layout: default
 display: true
 info: false
 bg_img: /assets/media/portfolio_covers/greening_cover.png
-splash_img: false
-splash_caption: >-
-  Lorem ipsum
+splash_img: /assets/media/posts/greening/header_greening.png
+splash_caption: ""
 
 include_scripts: []
 
