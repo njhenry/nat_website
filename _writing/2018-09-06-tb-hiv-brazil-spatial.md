@@ -2,7 +2,7 @@
 layout: default
 display: true
 
-title: "Eliminating TB and HIV deaths in Brazil: a spatial assessment"
+title: "Article | Eliminating TB and HIV deaths in Brazil: a spatial assessment"
 date: 2018-09-06
 info: >-
   Using spatially-resolved vital registration data from 2000 to 2015, we find

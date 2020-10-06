@@ -2,7 +2,7 @@
 layout: default
 display: true
 
-title: "Mapping child mortality across low- and middle-income countries"
+title: "Article | Mapping child mortality across low- and middle-income countries"
 date: 2019-10-16
 info: >-
   We map the effort to eliminate child mortality at the district level across 
