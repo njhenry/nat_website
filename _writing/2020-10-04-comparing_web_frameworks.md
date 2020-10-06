@@ -5,11 +5,12 @@ display: true
 title: HTML, Wordpress, Flask, Jekyll
 date: 2020-10-04
 info: >-
-  For my first blog post, I compare my experiences using four different web 
-  frameworks to create a personal website.
+  I compare my experiences using four different web frameworks to create a 
+  personal website, focusing on the questions of time, control over style, and
+  interactivity from the perspective of a web development novice.
 
-thumb_img: false
-thumb_alt: false
+thumb_img: /assets/media/writing_thumbs/2020-10-04-web-frameworks.png
+thumb_alt: Logos for HTML, Wordpress, Flask, Jekyll
 splash_img: false
 splash_caption: >-
   Lorem ipsum
