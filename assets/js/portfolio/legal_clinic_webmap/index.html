@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Visualizing LCD Data</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=0.5">
+
+	<link rel="stylesheet" href="./leaflet.css" />
+	<link rel="stylesheet" href="./LCD_map_styling.css" />
+	
+	<link rel="shortcut icon" href="./favicon.ico" type="image/vnd.microsoft.icon">
+</head>
+<body>
+	<!-- Below is the actual page markup: -->
+	<!-- Leaflet map goes here! -->
+	<div id="map"></div>
+
+	<!-- "Left" contains all of the options -->
+	<div id="left">
+		<div id="navigator">
+			<div class="container">
+				<div class="switch" id="radio">
+				  <input type="radio" class="switch-input" name="whichDisplay" value="norm" id="norm" checked>
+				  <label for="norm" class="switch-label switch-label-off">Normalized</label>
+				  <input type="radio" class="switch-input" name="whichDisplay" value="raw_num" id="raw_num">
+				  <label for="raw_num" class="switch-label switch-label-on">Raw Numbers</label>
+				  <span class="switch-selection"></span>
+				</div>
+			</div>
+			
+			<div class="tabs">
+				<ul class="tab-links">
+					<li class="active"><a href="#censusData">Census</a></li>
+					<li><a href="#referralsTab">Referrals</a></li>
+					<li><a href="#disTab">Disability</a></li>
+					<li><a href="#legalTab">Legal Need</a></li>
+				</ul>
+
+				<div class="tab-content">
+					<div id="censusData" class="tab active center_outer">
+						<div class="empty">
+						</div>
+						<div class="center_inner">
+							<button type="button" id="showCensusPovDis" class="navButton active censusButton">Population Eligible for LCD's Services</button><br><br>
+							<button type="button" id="showCensusPoverty" class="navButton censusButton">Population Under 150% of the Poverty Line</button><br><br>
+							<button type="button" id="showCensusDisabled" class="navButton censusButton">Disabled Population</button><br><br>
+							<button type="button" id="showCensusTotal" class="navButton censusButton">Total Population</button>
+						</div>
+					</div>				 
+					<div id="pieChartTab" class="tab">
+						<div id="pieChart"></div>
+					</div>
+					<button type="button" id="showMore" class="navButton" style="display:none">Show me more about this!</button>
+					<button type="button" id="reset" class="navButton" style="display:none">Reset View</button>
+				</div>
+			</div>
+		</div>
+
+		
+		<!-- This link is the X button -->
+		<a class="xbutton round on" id="toggle">x</a>
+	</div>
+	<!-- This ends "left" -->
+
+	<!-- Some scripts -->
+	<!-- JQuery -->
+	<!--[if !IE]><!--><script src="http://code.jquery.com/jquery-2.1.1.min.js"></script><!--<![endif]-->
+	<!--[if IE]><script src="http://code.jquery.com/jquery-1.11.3.min.js"></script><![endif]-->
+	
+	<!-- Leaflet -->
+	<script src="./leaflet-src.js"></script>
+	<!-- D3 -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
+	<!-- D3Pie (for pie charts) -->
+	<script src="./d3pie.min.js"></script>
+	<!-- My JSON -->
+	<script src="./tracts_all_joined.js"></script>
+	<script src="./classMetadata_2015_08_16.js"></script>
+	<script src="./MLP_points.js"></script>
+	<script src="./phillyNeighborhoods.js"></script>
+	<!-- The Javascript operations (these go last) -->
+	<script src="./lcd_map.js"></script>
+	
+</body>
+</html>

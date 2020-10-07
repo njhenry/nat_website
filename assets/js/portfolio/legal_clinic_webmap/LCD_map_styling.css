@@ -1,0 +1,370 @@
+/* Some CSS styling for this page */
+html, body, #map { height: 100%; }
+body {
+	padding: 0;
+	margin: 0;
+	background-color: #7D7D7D;
+	font-size: 14px;
+	font-family: Verdana, Geneva, sans-serif;
+	padding: 0 0 0 0;
+}
+
+div#left {
+	float:left;
+	position:absolute;
+	top: 10px;
+	left: 5px;
+	width: 465px;
+	height: 500px;
+	z-index: 10000;
+}
+a#toggle{
+	top: 5px;
+	right: 12px;
+	left: 0px;
+	position: relative;
+}
+div#pieChart{
+	height: 425px;
+	width: 400px;
+	margin: 0 0 5px 0;
+}
+div#navigator {
+	float: left;
+	height: 541px;
+	width: 425px;
+	text-align:center;
+	padding: 5px 0 0 0;
+	margin: 0;
+	background-color: #7D7D7D;
+	border-radius: 3px;
+	border: solid 3px #7D7D7D;
+	opacity: 0.95;
+}	
+hr.styled {
+	border: 0;
+	height: 2px;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+/* ---- Styles for div classes on the Leaflet map: ---- */
+.info {
+	padding: 8px 10px;
+	background: white;
+	background: rgba(254,239,219,0.9);
+	box-shadow: 0 0 15px rgba(0,0,0,0.3);
+	border-radius: 5px;
+}
+
+.info h5 {
+	margin: 0px;
+	padding: 0px;
+	font-size: 16px;
+	color: #555;
+}
+
+.legend {
+	text-align: left;
+	line-height: 18px;
+	font-size: 16px;
+}
+.legend i {
+	width: 18px;
+	height: 18px;
+	float: left;
+	margin-right: 8px;
+	opacity: 0.7;
+}
+.legend h5 {
+	text-align: center;
+}
+
+.details {
+	width: 425px;
+	height: 150px;
+	text-align: left;
+	padding: 5px 10px;
+}
+
+.details p {
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+}
+
+/*----- Tabs -----*/
+.tabs {
+	width:100%;
+	display:inline-block;
+	float:left;
+	padding:0px;
+	border: 0px;
+	margin:0px;
+}
+ 
+	/*----- Tab Links -----*/
+	/* Clearfix */
+	.tab-links {
+		float:center;
+		padding: 5px 5px 0px 5px;
+		border: 0px;
+		margin:0px;
+		width: 400px;
+	}
+	.tab-links:after {
+		display:block;
+		clear:both;
+		content:'';
+	}
+	.tab-links li {
+		margin:0px 3px;
+		float:left;
+		list-style:none;
+	}
+	.tab-links a {
+		width: 92px;
+		padding: 5px 0px;
+		display:inline-block;
+		border-radius:3px 3px 0px 0px;
+		background:#28B19A;
+		font-size:14px;
+		color:#FFF;
+		transition:all linear 0.15s;
+		text-decoration:none;
+	}
+
+	.tab-links a:hover {
+		background:#C5E5DA;
+		text-decoration:none;
+	}
+ 
+	li.active a, li.active a:hover {
+		font-weight: bold;
+		color:#4c4c4c;
+		background-color:#FEF4E6;
+	}
+ 
+	/*----- Content of Tabs -----*/
+	.tab-content {
+		width: 425px;
+		height: 470px;
+		padding: 0px;
+		border-radius:3px;
+		background-color: #FEF4E6;
+	}
+ 
+	.tab {
+		display:none;
+	}
+
+	.tab.active {
+		display:block;
+	}
+
+/* ---- For the "Census" Tab Nav Buttons ---- */
+.empty {
+  height:100px;
+}
+.navButton {
+  font: 16px Verdana, Geneva, sans-serif;
+  color: #FFF;
+  line-height: 26px;
+  border-radius:3px;
+  background-color: #28B19A;
+  opacity: 0.9;
+  width: 90%;
+}
+.navButton.active {
+	background-color: #C5E5DA;
+	color: #000;
+}
+.censusButton {
+	margin: 8px 0px;
+	padding: 2px 0px;
+}
+/* ---- For the X Button ---- */
+.xbutton {
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 0 0 0 5px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+
+.xbutton.round {
+    float: right;
+    float: top;
+    padding: 0px;
+    width: 25px;
+    height: 25px;
+    line-height: 18px;
+    border-radius: 50%;
+    vertical-align: top;
+    font-weight: normal;
+	font-size: 25px;
+}
+.xbutton.round.on {
+	background: #7D7D7D;
+}
+.xbutton.round.on:hover{
+    background: #444;
+}
+.xbutton.round.off{
+	background: #28B19A;
+}
+.xbutton.round.off:hover{
+	background: #1C7C6C;
+}
+
+/*----- For the sliders -----*/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0px;
+  width: 360px;
+  background-color: false;
+  background-image: -webkit-gradient(radial, center center, 0, center center, 460, color-stop(0%, rgba(255, 255, 255, 0.1)), color-stop(100%, transparent));
+  background-image: -webkit-radial-gradient(center, cover, rgba(255, 255, 255, 0.1), transparent);
+  background-image: -moz-radial-gradient(center, cover, rgba(255, 255, 255, 0.1), transparent);
+  background-image: -ms-radial-gradient(center, cover, rgba(255, 255, 255, 0.1), transparent);
+  background-image: -o-radial-gradient(center, cover, rgba(255, 255, 255, 0.1), transparent);
+  background-image: radial-gradient(center, cover, rgba(255, 255, 255, 0.1), transparent);
+}
+
+
+.switch {
+  position: relative;
+  height: 30px;
+  width: 360px;
+  margin: 5px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.switch-label {
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 178px;
+  line-height: 30px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.35);
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+}
+.switch-label:active {
+  font-weight: bold;
+}
+
+.switch-label-off {
+  padding-left: 2px;
+}
+
+.switch-label-on {
+  padding-right: 2px;
+}
+
+.switch-input {
+  display: none;
+}
+.switch-input:checked + .switch-label {
+  font-weight: bold;
+  color: #FFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.25);
+  -webkit-transition: 0.15s ease-out;
+  -moz-transition: 0.15s ease-out;
+  -ms-transition: 0.15s ease-out;
+  -o-transition: 0.15s ease-out;
+  transition: 0.15s ease-out;
+  -webkit-transition-property: color, text-shadow;
+  -moz-transition-property: color, text-shadow;
+  -ms-transition-property: color, text-shadow;
+  -o-transition-property: color, text-shadow;
+  transition-property: color, text-shadow;
+}
+.switch-input:checked + .switch-label-on ~ .switch-selection {
+  left: 180px;
+}
+
+.switch-selection {
+  position: absolute;
+  z-index: 1;
+  top: 2px;
+  left: 2px;
+  display: block;
+  width: 180px;
+  height: 26px;
+  border-radius: 3px;
+  background-color: #28B19A;
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
+  -webkit-transition: left 0.15s ease-out;
+  -moz-transition: left 0.15s ease-out;
+  -ms-transition: left 0.15s ease-out;
+  -o-transition: left 0.15s ease-out;
+  transition: left 0.15s ease-out;
+}
+
+/* ---- For the MLP Markers ---- */
+
+.hospitalMarker {
+    background-color: #ED6130;
+    text-align:center;
+    font-family: "Arial Black", "Arial Black", sans-serif;
+    font-size: 16px;
+    text-decoration: bold;
+    color: #FFF;
+    border-radius: 30%;
+    -webkit-box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+    opacity: 0.9;
+}
+
+.hospitalMarkerHighlight {
+    background-color: #F4A083;
+    text-align:center;
+    font-family: "Arial Black", "Arial Black", sans-serif;
+    font-size: 16px;
+    text-decoration: bold;
+    color: #FFF;
+    border-radius: 30%;
+    -webkit-box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+    opacity: 0.9;
+}
+
+.hospitalPopup{
+	text-align: center;
+	font-size: 12px;
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+.leaflet-popup-content a {
+	text-decoration: none;
+}
+
+/* ---- Leaflet Labels ---- */
+.text-labels {
+	font-size: 14px;
+	font-family: Verdana, Geneva, sans-serif;
+	text-align:center;
+	color: #FDE2BF;
+	text-shadow: 1px 1px 1px rgba(76, 33, 26, 0.7), -1px -1px 1px rgba(76, 33, 26, 0.7), 1px -1px 2px rgba(76, 33, 26, 0.7), -1px 1px 2px rgba(76, 33, 26, 0.7);
+	font-weight: 700;
+	font-style: italic;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	pointer-events: none;
+	/* Use color, background, set margins for offset, etc */
+}
