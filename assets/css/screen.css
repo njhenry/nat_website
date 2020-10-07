@@ -279,22 +279,18 @@ a.post-excerpt.photo {
 }
 
   a.post-excerpt.photo div.title {
-    padding:10px 40px;
+    padding: 10px 20px 20px 20px;
+    margin: 0px;
     font-size: 300%;
     font-weight: 100;
     color: #FFF;
-    /*background:rgba(255,200,0,0.1);*/
-    -webkit-text-shadow: 0px 0px 6px rgba(0, 0, 0, 1.0);
-    -moz-text-shadow: 0px 0px 6px rgba(0, 0, 0, 1.0);
-    text-shadow: 0px 0px 6px rgba(0, 0, 0, 1.0);
+    background:rgba(0, 0, 0, 0.5);
     position: absolute;
     left:0; right:0; bottom:0;
     z-index:2;
     font:'Crimson Text', georgia, serif;
     text-transform: none;
-    /*font-weight:400;*/
     line-height:1.1;
-    padding-bottom:1em;
   }
   a.post-excerpt.photo div.padded-content {
     padding:0;

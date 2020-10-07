@@ -43,7 +43,7 @@ for(f_i = 0, len_f = rails.features.length; f_i < len_f; f_i++ ){
     svg.append('polyline')
       .attr('points', coords_str)
       .attr('stroke', 'black')
-      .attr('stroke-width', 0.3)
+      .attr('stroke-width', 0.5)
       .attr('fill', 'none');
   }
 }
