@@ -209,7 +209,7 @@ Jekyll and Flask, below.
 
 [Jekyll](https://jekyllrb.com/) is a framework for building static sites using
 content templating. Jekyll mainly solves the issue of duplication:
-- It uses the [**Liquid**](https://shopify.github.io/liquid/) library to 
+- It uses the [Liquid](https://shopify.github.io/liquid/) library to 
   generate HTML templates that vary based on site- and page-specific settings
 - It allows for blocks of code such as a page header to be written once, then
   included across many pages
@@ -323,12 +323,13 @@ introduce Flask, a Python-based framework for serving web content.
 web applications, written in Python. There are some surface similarities to
 Jekyll: Flask relies on the templating library 
 [Jinja2](https://jinja.palletsprojects.com/en/2.11.x/), which [performs a 
-function to Liquid](https://medium.com/@i5ar/template-languages-a7b362971cbc) 
-and uses similar `{% raw %}{{ object }}{% endraw %}` and  `{% raw %}{% logic
-%}{% endraw %}` blocks to create HTML templates. The fundamental difference
-between the two is that Jekyll generates a set of static pages to upload to a
-site, while Flask dynamically serves content. This makes Flask a useful
-framework for building web services like APIs.
+function similar to
+Liquid](https://medium.com/@i5ar/template-languages-a7b362971cbc) by using `{%
+raw %}{{ object }}{% endraw %}` and `{% raw %}{% logic %}{% endraw %}` blocks to
+create HTML templates. The fundamental difference between the two is that Jekyll
+generates a set of static pages to upload to a site, while Flask dynamically
+serves content. This makes Flask a useful framework for building web services
+like APIs.
 
 I also found the experience of building sites using Flask and Jekyll very 
 different. While Jekyll requires just enough understanding of Ruby to make 
