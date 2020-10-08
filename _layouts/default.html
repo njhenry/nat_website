@@ -25,8 +25,22 @@
   	<link rel="stylesheet" href="/assets/css/content_page.css" type="text/css">
 
     <!-- Social media -->
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@{{ site.twitter_username}}">
+    <meta name="twitter:title" content="{{ page.title }}">
+    {% if page.info %}
+      <meta name='twitter:description' content='{{ page.info }}'>
+    {% else %}
+      <meta name='twitter:description' content="Welcome to the personal website of Nat Henry">
+    {% endif %}
+
+    {% if page.thumb_img %}
+      <meta name='twitter:image' content="{{ page.thumb_img }}">
+    {% elsif page.splash_img %}
+      <meta name='twitter:image' content="{{ page.splash_img }}">
+    {% else %}
+      <meta name='twitter:image' content="/android-chrome-512x512.png">
+    {% endif %}
 
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
