@@ -170,12 +170,11 @@ div.content.photo {
     font-style:italic;
     line-height:1.618;
     background:transparent url(quotation-mark.png) no-repeat scroll 25px 1.4em;
-    padding:0.1em 1em 0.1em 60px;
-    margin:1.618em 0 1.618em -60px;
+    padding: 0 0 0 60px;
     color: #666055;
     text-rendering: optimizelegibility;
   }
-  div.content div.quotation blockquote { margin-left:-30px; }
+  div.content div.quotation blockquote { margin-left: 30px; }
   div.content pre {
     line-height:1.3;
     background-color:transparent;
