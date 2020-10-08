@@ -47,3 +47,7 @@ Each of the latter three tabs contains a pie chart showing the breakdown of clie
 <div id='pie-lcd-legal-need' style='margin-bottom: 10px;'></div>
 
 The user can hover their mouse over different segments of the pie chart to show counts for that particular category. If the user wishes to view only intakes from that subcategory, they can click on the subcategory, then press the “*Show me more about this!*” button at the bottom. The map will change to only display intakes from that sub-category. To view all intakes once again, the user can change their tab, or else press the “Reset View” button below the pie chart.
+
+<hr />
+
+*Want to know more? Please [get in touch](/contact.html)!*

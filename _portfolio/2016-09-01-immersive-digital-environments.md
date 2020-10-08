@@ -69,4 +69,6 @@ navigate:
  - For users with a VR headset, simply plug the headset into your computer on 
    Extended Desktop mode to view the landscape in VR.
 
+<hr />
 
+*Want to know more? Please [get in touch](/contact.html)!*
