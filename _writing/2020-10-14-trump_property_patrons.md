@@ -146,7 +146,7 @@ investigation, or just a subset. Note also that the *amount* of money spent by
 each group is not included in the data.
 
 I cleaned the dataset in R, exported as a new JSON object, and [visualized the
-results](/assets/js/trump_property_patrons/patrons_network.html) using an
+results](/assets/js/writing/trump_property_patrons/patrons_network.html) using an
 interactive force-directed diagram built in D3 (Javascript). The source code
 for this project is available [on
 GitHub](https://github.com/njhenry/trump_property_patrons).
@@ -317,7 +317,7 @@ underlying dataset:
   America](https://www.wsj.com/articles/from-anguished-appeal-to-presidential-tweet-how-a-doctor-changed-u-s-policy-1539864000),
   led by Rim Al-Bezem
 - The People's Democratic Party of Nigeria, likely presidential candidate [Atiku
-  Abubakar]((https://www.propublica.org/article/trump-inc-podcast-nigerian-presidential-candidate-atiku-abubakar))
+  Abubakar](https://www.propublica.org/article/trump-inc-podcast-nigerian-presidential-candidate-atiku-abubakar)
 
 The Times reports that two additional Ballard clients spent money at Trump
 properties. While the underlying dataset does not include the names of these
@@ -381,11 +381,12 @@ You can explore the visualization for yourself
 source code underlying the visualization is available on
 [GitHub](https://github.com/njhenry/trump_property_patrons/tree/main/web_viz).
 
-We live in a crowded news cycle. The 1922 Teapot Dome affair involved
+We live in a crowded news cycle. The [1922 Teapot Dome
+affair](https://en.wikipedia.org/wiki/Teapot_Dome_scandal) involved
 substantially *less* money changing hands (equivalent to $7.2 million today)
-than the amounts detailed in the Times investigation---but while Teapot Dome is
-still considered the biggest cabinet scandal before Watergate, the Times report
-has already disappeared from the headlines without creating much of a splash in
+than the amounts detailed in the Times investigation. But while Teapot Dome is
+remembered as the biggest cabinet scandal before Watergate, the Times report has
+already disappeared from the headlines without creating much of a splash in
 public discourse.
 
 Given the urgency of this report's claims, my goal is to make the underlying
