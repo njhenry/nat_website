@@ -15,6 +15,7 @@ splash_caption: ""
 
 twitter_card_type: summary_large_image
 twitter_card_img: /assets/js/writing/trump_property_patrons/patrons_network.html
+twitter_img_alt: "A network representation of political spending at Trump properties"
 
 include_scripts: []
 
@@ -50,15 +51,15 @@ an interest group who spent money at a Trump property.
 </p>
 
 Compared to the promised scope of this investigation, I found the Times report
-to be frustratingly anecdotal. Most of the narrative focuses on particular
-individuals and organizations who spent large sums of money at Trump properties,
-then lobbied the president to adopt policies in their favor. While these stories
-are important and concerning, they describe only a small fraction of the parties
-covered by the investigation. Without descriptive statistics to characterize
-spending and influence across all interest groups, and with the network diagram
-only ever naming a few organizations at a time, it's hard to determine how
-representative those narratives are across President Trump's wider patronage
-network.
+to be frustratingly anecdotal. Much of the narrative focuses on particular
+individuals and organizations who spent large amounts of money at Trump
+properties, then lobbied the president to adopt policies in their favor. While
+these stories are important and concerning, they describe only a small fraction
+of the parties covered by the investigation. Without descriptive statistics to
+characterize spending and influence across all interest groups, and with the
+background diagram only ever naming a few organizations at a time, it's hard to
+determine how representative those narratives are across President Trump's wider
+patronage network.
 
 To understand the web of politically-motivated spending at Trump properties, I
 pulled the patronage dataset underlying the Times report's web visualization.
