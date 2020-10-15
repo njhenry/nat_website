@@ -25,7 +25,11 @@
   	<link rel="stylesheet" href="/assets/css/content_page.css" type="text/css">
 
     <!-- Social media -->
-    <meta name="twitter:card" content="summary" />
+    {% if page.twitter_card_type %}
+      <meta name="twitter:card" content="{{ page.twitter_card_type }}" />
+    {% else %}
+      <meta name="twitter:card" content="summary" />
+    {% endif %}
     <meta name="twitter:site" content="@{{ site.twitter_username}}">
     <meta name="twitter:title" content="{{ page.title }}">
     {% if page.info %}
@@ -34,8 +38,12 @@
       <meta name='twitter:description' content="Welcome to the personal website of Nat Henry">
     {% endif %}
 
-    {% if page.thumb_img %}
+    {% if page.twitter_card_img %}
+      <meta name='twitter:image' content="https://nathenry.com{{ page.twitter_card_img }}">
+    {% elsif page.thumb_img %}
       <meta name='twitter:image' content="https://nathenry.com{{ page.thumb_img }}">
+    {% elsif page.bg_img %}
+      <meta name='twitter:image' content="https://nathenry.com{{ page.bg_img }}">
     {% elsif page.splash_img %}
       <meta name='twitter:image' content="https://nathenry.com{{ page.splash_img }}">
     {% else %}
