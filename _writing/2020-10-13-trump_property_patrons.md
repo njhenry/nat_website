@@ -3,7 +3,7 @@ layout: default
 display: true
 
 title: "Analysis: The President's Patrons"
-date: 2020-10-13
+date: 2020-10-14
 info: >-
   I describe the dataset behind a New York Times investigative report on
   interest group spending at Trump properties.
