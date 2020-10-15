@@ -5,20 +5,22 @@ display: true
 title: "Analysis: The President's Patrons"
 date: 2020-10-13
 info: >-
-  I describe the dataset underlying a New York Times report on interest group
-  spending at Trump Organization properties.
+  I describe the dataset behind a New York Times investigative report on
+  interest group spending at Trump properties.
 
-thumb_img: false
-thumb_alt: ""
-splash_img: false
-splash_caption: >-
-  Lorem ipsum
+thumb_img: /assets/media/writing_thumbs/2020-10-14-trump_property_patrons.png
+thumb_alt: "Interest group spending at the Trump International Hotel in Washington, D.C."
+splash_img: /assets/media/writing/trump_property_patrons/post_header.png
+splash_caption: ""
+
+twitter_card_type: summary_large_image
+twitter_card_img: /assets/js/writing/trump_property_patrons/patrons_network.html
 
 include_scripts: []
 
 ---
 
-# The President's Patrons
+<h1 style='text-align:center'>Analysis: The President's Patrons</h1>
 
 Last Saturday, the New York Times released a new chapter in its [ongoing
 investigation of President Trump's
@@ -60,13 +62,13 @@ network.
 
 To understand the web of politically-motivated spending at Trump properties, I
 pulled the patronage dataset underlying the Times report's web visualization.
-The dataset identifies new spenders and connections that were not reported in 
+The dataset identifies new spenders and connections that were not reported in
 the original Times article. I have also analyzed the data and created an
 interactive visualization to get a broader perspective on interest group
 spending.
 
 
-## A dataset of patrons
+### Understanding the dataset
 
 I copied the Javascript data underlying the scrolling visualization for "[The
 Swamp That Trump
@@ -171,13 +173,14 @@ GitHub](https://github.com/njhenry/trump_property_patrons).
 </p>
 
 By color-coding interest groups by type, we can get a sense of the different
-communities that formed around each Trump property. Businesses and trade
-associations make up the bulk of political spenders at the Trump golf clubs in
-Doral, Bedminster, Washington, D.C., and Turnberry. At Mar-a-Lago, business
-interests intermingled with advocacy groups and charities, although business
-groups were far more likely to buy memberships---all but three Mar-a-Lago 
-members in this dataset were classified as businesses, with two of the remaining
-members being Trump's chosen ambassadors to [South 
+communities that formed around each Trump property.
+
+Businesses and trade associations make up the bulk of political spenders at the
+Trump golf clubs in Doral, Bedminster, Washington, D.C., and Turnberry. At
+Mar-a-Lago, business interests intermingled with advocacy groups and charities,
+although business groups were far more likely to buy memberships---all but three
+Mar-a-Lago members in this dataset were classified as businesses, with two of
+the remaining members being Trump's chosen ambassadors to [South
 Africa](https://www.vogue.com/article/lana-marks-trump-south-africa-ambassador-handbags)
 and the [Dominican
 Republic](https://www.palmbeachpost.com/news/national-govt--politics/trump-friend-and-mar-lago-member-named-dominican-ambassador/UFYNFCj9OdwZPWO4JqyoEO/).
