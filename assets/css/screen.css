@@ -158,6 +158,42 @@ div.content.photo {
   div.content *[align="right"] { margin:0 0 1em 1.5em; }
   div.content *[align="left"] { margin:0 1.5em 1em 0; }
 
+  div.content img.bordered {
+    border:1px solid #DDD;
+  }
+  div.content p.caption {
+    text-align: center;
+    color: #666055;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  /* Table styling */
+  div.content table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    font-size: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  div.content th {
+    border-bottom: 2px solid black;
+  }
+  div.content tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  div.content th, td {
+    border-left: 1px solid black;
+    padding: 5px;
+  }
+  div.content td:first-child, div.content th:first-child {
+    border-left: none;
+  }
+  div.content tr:hover { 
+    background-color: #ddd;
+  }
+
+
   /*div.post strong { font-weight:inherit; background:#FBF4B1; }*/
   div.content li {
     margin-left: 2em;
@@ -213,17 +249,6 @@ div.content.photo {
   div.content sup:target a { padding:2px 5px; }
   div.content div.footnotes li { color:#999; }
   div.content div.footnotes li:target { background:#ffc; color:inherit; }
-  
-  /* wide objects */
-  /* this is b0rked */
-  /*div.content *[alt~="fullbleed"] {
-    position: relative;
-    left:-11%; right:-20%;
-  }
-  div.content *[alt~="large"] {
-    max-width:1024px;
-    margin-left:-180px;
-  }*/
 
 /*div.content { border-bottom:2px solid #D1D1D1; }*/
 
