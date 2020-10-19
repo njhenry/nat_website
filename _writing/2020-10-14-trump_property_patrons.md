@@ -5,8 +5,8 @@ display: true
 title: "Analysis: The President's Patrons"
 date: 2020-10-14
 info: >-
-  Describing the dataset behind an investigative report on interest group
-  spending at Trump properties.
+  Digging into an investigative report on interest group spending at Trump
+  properties.
 
 thumb_img: /assets/media/writing_thumbs/2020-10-14-trump_property_patrons.png
 thumb_alt: "Interest group spending at the Trump International Hotel in Washington, D.C."
@@ -279,8 +279,7 @@ The article describes how Brian Ballard, a Florida lobbyist and GOP donor,
 became "[the most powerful lobbyist in Trump's
 Washington](https://www.politico.com/magazine/story/2018/04/02/most-powerful-lobbyist-in-trump-washington-217759)"
 thanks partly to connections forged at Trump properties. Of the six clients
-listed in the article, four are named in the Times article as well as the
-underlying dataset:
+listed in the article, four are named in the Times article:
 
 - U.S. Sugar
 - The private prison operator GEO Group, represented by founder George Zoley
@@ -312,15 +311,15 @@ clients, it does provide some identifying information:
 
 ## Visualization
 
-I created an interactive visualization to explore all 227 patrons described in
-the Times dataset. The network structure is the same as in the original article,
+I created an interactive visualization to explore all 227 patrons implicated in
+the Times article. The network structure is the same as in the original article,
 with money flowing from patrons to a primary Trump property, and with all of the
 Trump properties centered around the president.
 
-Colors denote each interest group type, as assigned in the original dataset. You
-can also focus attention on particular subsets of patrons: those identified by
-name, members of a Trump property, Brian Ballard clients, and the 60 big
-spenders highlighted by the Times.
+Colors denote each interest group type. You can also focus attention on
+particular subsets of patrons: those identified by name, members of a Trump
+property, Brian Ballard clients, and the 60 big spenders highlighted by the
+Times.
 
 <p class='caption'>
   <a href='/assets/js/writing/trump_property_patrons/patrons_network.html'>
