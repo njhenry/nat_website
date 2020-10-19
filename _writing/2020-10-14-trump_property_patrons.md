@@ -5,8 +5,8 @@ display: true
 title: "Analysis: The President's Patrons"
 date: 2020-10-14
 info: >-
-  I describe the dataset behind a New York Times investigative report on
-  interest group spending at Trump properties.
+  Describing the dataset behind an investigative report on interest group
+  spending at Trump properties.
 
 thumb_img: /assets/media/writing_thumbs/2020-10-14-trump_property_patrons.png
 thumb_alt: "Interest group spending at the Trump International Hotel in Washington, D.C."
@@ -14,7 +14,7 @@ splash_img: /assets/media/writing/trump_property_patrons/post_header.png
 splash_caption: ""
 
 twitter_card_type: summary_large_image
-twitter_card_img: /assets/js/writing/trump_property_patrons/patrons_network.html
+twitter_card_img: /assets/media/writing/trump_property_patrons/patron_network_full.png
 twitter_img_alt: "A network representation of political spending at Trump properties"
 
 include_scripts: []
@@ -22,6 +22,12 @@ include_scripts: []
 ---
 
 <h1 style='text-align:center'>Analysis: The President's Patrons</h1>
+
+***Update 18 October:** This post has been updated to reflect that additional
+information about Trump property patrons was made available in the print edition
+of the source article.*
+
+<hr />
 
 Last Saturday, the New York Times released a new chapter in its [ongoing
 investigation of President Trump's
@@ -38,61 +44,32 @@ animated network diagram in the online articles adds to the sense of scale: as
 you scroll down, the diagram highlights hundreds of dots, each one representing
 an interest group who spent money at a Trump property.
 
-<p class='caption'>
-  <img
-    src='/assets/media/writing/trump_property_patrons/nyt_screenshot_dots.png'
-    alt='The network of Trump property patrons, as visualized by the New York Times'
-    class='img-center bordered'
-  />
-  The network of Trump property patrons, as visualized by the New York Times
-  <a href='https://www.nytimes.com/interactive/2020/10/10/us/trump-properties-swamp.html'>
-    report
-  </a>
-</p>
+Much of the narrative focuses on particular individuals and organizations who
+spent large amounts of money at Trump properties, then lobbied the president to
+adopt policies in their favor. While these stories are important and concerning,
+they describe only a small fraction of the parties covered by the investigation.
+Without descriptive statistics to characterize spending and influence across all
+interest groups, and with the background diagram only ever naming a few
+organizations at a time, it's hard to determine how representative those
+narratives are across President Trump's wider patronage network.
 
-Compared to the promised scope of this investigation, I found the Times report
-to be frustratingly anecdotal. Much of the narrative focuses on particular
-individuals and organizations who spent large amounts of money at Trump
-properties, then lobbied the president to adopt policies in their favor. While
-these stories are important and concerning, they describe only a small fraction
-of the parties covered by the investigation. Without descriptive statistics to
-characterize spending and influence across all interest groups, and with the
-background diagram only ever naming a few organizations at a time, it's hard to
-determine how representative those narratives are across President Trump's wider
-patronage network.
-
-To understand the web of politically-motivated spending at Trump properties, I
-pulled the patronage dataset underlying the Times report's web visualization.
-The dataset identifies new spenders and connections that were not reported in
-the original Times article. I have also analyzed the data and created an
-interactive visualization to get a broader perspective on interest group
-spending.
+To understand the web of politically-motivated spending at Trump properties, 
+anyone can pull the patronage dataset underlying the Times report's web
+visualization. The dataset identifies new spenders and connections that were not
+reported in the Times online article. Anyone can analyze and visualize the data
+in ways that offer a broader perspective on interest group spending.
 
 
 ### Understanding the dataset
 
-I copied the Javascript data underlying the scrolling visualization for "[The
-Swamp That Trump
+The dataset underlying the scrolling visualization for "[The Swamp That Trump
 Built](https://www.nytimes.com/interactive/2020/10/10/us/trump-properties-swamp.html),"
-which is currently available to the public on the New York Times website. To see
-the raw data for yourself:
+is currently available to the public on the New York Times website. To see the
+raw data for yourself:
 1. Navigate to the [article
    page](https://www.nytimes.com/interactive/2020/10/10/us/trump-properties-swamp.html)
 2. Open the "Inspect Element" view on your browser
-3. Search the page content for a script beginning with `window.LAYOUT`
-
-<p class='caption'>
-  <img
-    src='/assets/media/writing/trump_property_patrons/data_view.png'
-    alt='Viewing the input data on the NYT website'
-    class='img-center bordered'
-  />
-  Viewing the input data on the NYT website
-</p>
-
-I copied the JSON object assigned to `window.ENTITIES` and converted it to a CSV
-for convenience. You can view the dataset as a table
-[here](https://github.com/njhenry/trump_property_patrons/blob/main/input_data/patron_data.csv).
+3. Search the for a JSON object assigned to `window.ENTITIES`
 
 **The data contains a total of 227 interest groups who patronized Trump
 properties since 2017**. Each row, representing a different group or individual,
@@ -143,19 +120,8 @@ is made up of nine columns:
 
 It is unclear whether this data represents all interest groups covered by the
 investigation, or just a subset. Note also that the *amount* of money spent by
-each group is not included in the data.
-
-I cleaned the dataset in R, exported as a new JSON object, and [visualized the
-results](/assets/js/writing/trump_property_patrons/patrons_network.html) using an
-interactive force-directed diagram built in D3 (Javascript). The source code
-for this project is available [on
-GitHub](https://github.com/njhenry/trump_property_patrons).
-
-<h3 style='text-align:center;'>
-  <a href='/assets/js/writing/trump_property_patrons/patrons_network.html'>
-    Explore the patron network
-  </a>
-</h3>
+each group is not included in the data, although spending amounts from select
+organizations were highlighted alongside the print version of the story.
 
 
 ## New findings
@@ -170,11 +136,13 @@ GitHub](https://github.com/njhenry/trump_property_patrons).
       class='img-center bordered'
     />
   </a>
-  Screenshot of the patron network web visualization
+  Visualizing the patron network by business type
 </p>
 
 By color-coding interest groups by type, we can get a sense of the different
-communities that formed around each Trump property.
+communities that formed around each Trump property. \[*Update 18 Oct: Some of
+this information was reflected in a graphic accompanying the the print edition
+of the original article*\]
 
 Businesses and trade associations make up the bulk of political spenders at the
 Trump golf clubs in Doral, Bedminster, Washington, D.C., and Turnberry. At
@@ -193,31 +161,33 @@ least 13 foreign governments.
 ### Named patrons not previously reported
 
 Of the 227 Trump organization patrons included in this dataset, only 48 were
-identified by name. **This includes 12 named interest groups not originally
-reported in the Times article:**
+identified by name. This includes 12 named interest groups that were displayed
+in a graphic accompanying the print edition of the article, but not the online
+edition:
 
-| Interest group name                          | Data identifier                              | Trump Property       |
-|----------------------------------------------|----------------------------------------------|----------------------|
-| **Indian Government (Unlabeled)**            | **indian government**                        | **D.C. Intl. Hotel** |
-| **U.S. Chamber of Commerce**                 | **us chamber of commerce**                   | **Doral**            |
-| Center for Security Policy                   | center for security policy frank gaffney     | Mar-a-Lago           |
-| Chirag Patel - Amneal Pharmaceuticals        | chirag patel                                 | Bedminster           |
-| *Concerned Women for America (Unlabeled)*    | concerned women for america                  | D.C. Intl. Hotel     |
-| Domestic Energy Producers Alliance           | domestic energy producers alliance hamm      | D.C. Intl. Hotel     |
-| First Liberty Institute                      | first liberty institute                      | D.C. Intl. Hotel     |
-| Florida Police Chiefs Association            | florida police chiefs association            | Doral                |
-| Heartland Institute                          | heartland institute                          | D.C. Intl. Hotel     |
-| Independent Petroleum Association of America | independent petroleum association of america | D.C. Intl. Hotel     |
-| Big Dog Ranch Rescue                         | laurie simmons big dog ranch rescue          | Mar-a-Lago           |
-| Sovereign Nations                            | sovereign nations michael ofallon            | D.C. Intl. Hotel     |
+| Interest group name                          | Trump Property       |
+|----------------------------------------------|----------------------|
+| **Indian Government**                        | **D.C. Intl. Hotel** |
+| **U.S. Chamber of Commerce**                 | **Doral**            |
+| Center for Security Policy                   | Mar-a-Lago           |
+| Chirag Patel - Amneal Pharmaceuticals        | Bedminster           |
+| *Concerned Women for America (Unlabeled)*    | D.C. Intl. Hotel     |
+| Domestic Energy Producers Alliance           | D.C. Intl. Hotel     |
+| First Liberty Institute                      | D.C. Intl. Hotel     |
+| Florida Police Chiefs Association            | Doral                |
+| Heartland Institute                          | D.C. Intl. Hotel     |
+| Independent Petroleum Association of America | D.C. Intl. Hotel     |
+| Big Dog Ranch Rescue                         | Mar-a-Lago           |
+| Sovereign Nations                            | D.C. Intl. Hotel     |
 
 The two bolded groups were both listed among the 60 patrons who spent
 substantial amounts of money at Trump properties during 2017-2018. The Indian
 government's inclusion on this list may partly stem from a period in February
 and March 2017 when Indian diplomats [spent
 $18,650](https://www.citizen.org/article/catering-to-conflicts-influence-and-self-dealing-at-trumps-businesses/)
-at the Trump International Hotel in Washington, D.C.; for its part, the U.S.
-Chamber of Commerce hosted a [three-day executive
+at the Trump International Hotel in Washington, D.C. \[*Update 18 Oct: the print
+edition of the original article also listed the spending amount as $18,650*\].
+For its part, the U.S. Chamber of Commerce hosted a [three-day executive
 retreat](https://maplight.org/story/nations-biggest-lobbying-organization-plans-2018-meeting-at-trump-owned-miami-resort/)
 at the Trump National Doral in March 2018.
 
@@ -251,7 +221,9 @@ $200,000 each---is believable given the other sums described in the article.
 What strikes me is the implication that the Times has matched spending from each
 of these customers to favorable treatment from the Trump administration. The
 untold stories of these 60 interest groups are a ripe subject for more detailed
-reporting as the investigation continues.
+reporting as the investigation continues. \[*Update 18 Oct: the print edition of
+the article suggests that over 90% of all patron groups had their interests
+furthered by the Trump administration*\]
 
 So who are these groups? While many of these organizations remain anonymous in
 the underlying dataset, we can get a sense for the types of groups that may have
@@ -267,7 +239,7 @@ paid their way into the administration's good graces:
 | Business          | Jeffrey P. Feingold, MCNA                    |
 | Business          | Morgan Stanley                               |
 | Business          | *(31 unnamed businesses)*                    |
-| Foreign-Gov       | Indian Government (Unlabeled)                |
+| Foreign-Gov       | Indian Government                            |
 | Foreign-Gov       | *(2 unnamed foreign governments)*            |
 | Religious Org     | Christian Broadcasting Network               |
 | Religious Org     | Billy Graham Evangelist Association          |
@@ -294,12 +266,11 @@ highlighted groups patronized the Trump National Doral resort.
   during 2017 and 2018
 </p>
 
-The three foreign governments in this group, including India (unlabeled, but
-inferred from the data identifier) and two unnamed countries, are not described
-in the Times article. Their inclusion in a cohort where "almost all saw their
-interests advanced" is unnerving---we deserve to know the identities of all
-three governments, how much money was spent, and how that spending may have
-influenced government policy.
+The three foreign governments in this group, including India and two unnamed
+countries, are not described in the Times article. Their inclusion in a cohort
+where "almost all saw their interests advanced" is unnerving---we deserve to
+know the identities of all three governments, how much money was spent, and how
+that spending may have influenced government policy.
 
 
 ### Clients of Brian Ballard
@@ -377,9 +348,7 @@ drag nodes to rearrange the chart.
 </p>
 
 You can explore the visualization for yourself
-[here](/assets/js/writing/trump_property_patrons/patrons_network.html). The
-source code underlying the visualization is available on
-[GitHub](https://github.com/njhenry/trump_property_patrons/tree/main/web_viz).
+[here](/assets/js/writing/trump_property_patrons/patrons_network.html).
 
 We live in a crowded news cycle. The [1922 Teapot Dome
 affair](https://en.wikipedia.org/wiki/Teapot_Dome_scandal) involved
@@ -398,13 +367,6 @@ patronage network and its consequences for American government.
 
 
 <hr />
-
-***Note on data provenance**: This dataset is sourced from publicly-available
-web content attached to a New York Times [online
-article](https://www.nytimes.com/interactive/2020/10/10/us/trump-properties-swamp.html).
-I have analyzed this data for my own personal use, in accordance with Section
-2.3 of the New York Times [terms of
-service](https://help.nytimes.com/hc/en-us/articles/115014893428-Terms-of-service).*
 
 *This is a secondary analysis of a dataset published by the New York Times in
 conjunction with Citizens for Responsibility and Ethics in Washington, Public
